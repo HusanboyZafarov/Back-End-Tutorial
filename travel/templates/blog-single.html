@@ -130,7 +130,6 @@ Blog | {{ blog.title }}
                     {% elif b.get_month == 12 %}December{% endif %}
                     {{blog.get_day}}, {{b.get_year}}</a></div>
                 <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="{{ b.get_absolute_url }}"><span class="icon-chat"></span> {{ b.comments|length }}</a></div>
               </div>
             </div>
           </div>

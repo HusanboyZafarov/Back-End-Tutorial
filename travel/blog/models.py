@@ -24,7 +24,7 @@ class Destination(models.Model):
     slug = models.SlugField(max_length=300, unique=True)
     day = models.PositiveIntegerField(default=5)
     price = models.PositiveIntegerField(default=100)
-    image = models.ImageField(upload_to='Destionation_Images/%Y-Year/%M-Month')
+    image = models.ImageField(upload_to='Destionation_Images/%Y-Year/%m-Month')
 
     def __str__(self):
         return str(self.title)
@@ -35,7 +35,7 @@ class Hotel(models.Model):
     slug = models.SlugField(max_length=350, unique=True)
     day = models.PositiveIntegerField(default=5)
     price = models.PositiveIntegerField(default=100)
-    image = models.ImageField(upload_to='Hotels_Images/%Y-Year/%M-Month')
+    image = models.ImageField(upload_to='Hotels_Images/%Y-Year/%m-Month')
 
     def __str__(self):
         return str(self.title)
@@ -47,7 +47,7 @@ class Blog(models.Model):
     data_time = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tag)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='Blog_Images/%Y-Year/%M-Month')
+    image = models.ImageField(upload_to='Blog_Images/%Y-Year/%m-Month')
     text = models.TextField()
 
     def __str__(self):
