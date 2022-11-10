@@ -19,16 +19,6 @@ class Category(models.Model):
     def __str__(self):
         return str(self.name)
 
-
-class HappyTraveler(models.Model):
-    name = models.CharField(max_length=200)
-    position = models.CharField(max_length=100)
-    text = models.TextField()
-
-    def __str__(self):
-        return str(self.name)
-
-
 class Destination(models.Model):
     title = models.CharField(max_length=300)
     slug = models.SlugField(max_length=300, unique=True)
@@ -79,6 +69,7 @@ class Blog(models.Model):
 class Comment(models.Model):
     blog = models.ForeignKey(Blog, on_delete=models.CASCADE)
     name = models.CharField(max_length=150)
+    created_at = models.DateTimeField(auto_now_add=True, null=True)
     email = models.EmailField()
     message = models.TextField()
 

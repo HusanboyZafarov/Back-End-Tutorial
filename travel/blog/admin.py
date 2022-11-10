@@ -1,8 +1,6 @@
 from django.contrib import admin
-from .models import HappyTraveler, Destination, Hotel, Blog, Comment, Tag, Category
+from .models import Destination, Hotel, Blog, Comment, Tag, Category
 # Register your models here.
-
-admin.site.register(HappyTraveler)
 
 
 @admin.register(Tag)
@@ -35,8 +33,8 @@ class AdminHotel(admin.ModelAdmin):
 
 @admin.register(Blog)
 class AdminBlog(admin.ModelAdmin):
-    list_display = ['title', 'data_time', 'id']
-    list_display_links = ['title', 'data_time', 'id']
+    list_display = ['title', 'category', 'data_time', 'id']
+    list_display_links = ['title', 'category', 'data_time', 'id']
     prepopulated_fields = {'slug': ('title', )}
 
 
