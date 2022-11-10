@@ -55,7 +55,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=200)
     slug = models.SlugField(max_length=250, unique=True)
     data_time = models.DateTimeField(auto_now_add=True)
-    tag = models.ForeignKey(Tag, on_delete=models.CASCADE)
+    tags = models.ManyToManyField(Tag)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='Blog_Images/%Y-Year/%M-Month')
     text = models.TextField()
