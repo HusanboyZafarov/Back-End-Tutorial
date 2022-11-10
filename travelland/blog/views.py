@@ -1,11 +1,14 @@
 from django.shortcuts import render
-
+from .models import Tag, HappyTraveler, Destination, Hotel, Blog, Comment
 # Create your views here.
 
 
 def home(request):
+    destinations = Destination.objects.all().order_by('-id')[:4]
+    hotels = Hotel.objects.all().order_by('-id')[:3]
     context = {
-
+        'destinations': destinations,
+        'hotels': hotels,
     }
     return render(request, 'index.html', context)
 
@@ -32,6 +35,13 @@ def hotels(request):
 
 
 def blog(request):
+    context = {
+
+    }
+    return render(request, 'blog.html', context)
+
+
+def blog_detail(request):
     context = {
 
     }

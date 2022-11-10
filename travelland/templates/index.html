@@ -102,15 +102,16 @@
 			</div>
 		</div>
 		<div class="row">
+			{% for destination in destinations %}
 			<div class="col-md-6 col-lg-3 ftco-animate">
 				<div class="project">
 					<div class="img">
-						<img src="images/destination-1.jpg" class="img-fluid" alt="Colorlib Template">
+						<img src="{{ destination.image.url }}" class="img-fluid" alt="Colorlib Template">
 					</div>
 					<div class="text">
-						<h4 class="price">$400</h4>
-						<span>15 Days Tour</span>
-						<h3><a href="project.html">Gurtnellen, Swetzerland</a></h3>
+						<h4 class="price">${{ destination.price }}</h4>
+						<span>{{ destination.day }} Days Tour</span>
+						<h3><a href="/">{{ destination.title }}</a></h3>
 						<div class="star d-flex clearfix">
 							<div class="mr-auto float-left">
 								<span class="ion-ios-star"></span>
@@ -124,92 +125,12 @@
 							</div>
 						</div>
 					</div>
-					<a href="images/destination-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+					<a href="{{ destination.image.url }}" class="icon image-popup d-flex justify-content-center align-items-center">
 						<span class="icon-expand"></span>
 					</a>
 				</div>
 			</div>
-			<div class="col-md-6 col-lg-3 ftco-animate">
-				<div class="project">
-					<div class="img">
-						<img src="images/destination-2.jpg" class="img-fluid" alt="Colorlib Template">
-					</div>
-					<div class="text">
-						<h4 class="price">$400</h4>
-						<span>15 Days Tour</span>
-						<h3><a href="project.html">Gurtnellen, Swetzerland</a></h3>
-						<div class="star d-flex clearfix">
-							<div class="mr-auto float-left">
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-							</div>
-							<div class="float-right">
-								<span class="rate"><a href="#">(120)</a></span>
-							</div>
-						</div>
-					</div>
-					<a href="images/destination-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-						<span class="icon-expand"></span>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-3 ftco-animate">
-				<div class="project">
-					<div class="img">
-						<img src="images/destination-3.jpg" class="img-fluid" alt="Colorlib Template">
-					</div>
-					<div class="text">
-						<h4 class="price">$400</h4>
-						<span>15 Days Tour</span>
-						<h3><a href="project.html">Gurtnellen, Swetzerland</a></h3>
-						<div class="star d-flex clearfix">
-							<div class="mr-auto float-left">
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-							</div>
-							<div class="float-right">
-								<span class="rate"><a href="#">(120)</a></span>
-							</div>
-						</div>
-					</div>
-					<a href="images/destination-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-						<span class="icon-expand"></span>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-3 ftco-animate">
-				<div class="project">
-					<div class="img">
-						<img src="images/destination-4.jpg" class="img-fluid" alt="Colorlib Template">
-					</div>
-					<div class="text">
-						<h4 class="price">$400</h4>
-						<span>15 Days Tour</span>
-						<h3><a href="project.html">Gurtnellen, Swetzerland</a></h3>
-						<div class="star d-flex clearfix">
-							<div class="mr-auto float-left">
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-							</div>
-							<div class="float-right">
-								<span class="rate"><a href="#">(120)</a></span>
-							</div>
-						</div>
-					</div>
-					<a href="images/destination-4.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-						<span class="icon-expand"></span>
-					</a>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>
@@ -319,15 +240,16 @@
 			</div>
 		</div>
 		<div class="row">
+			{% for hotel in hotels %}
 			<div class="col-md-6 col-lg-4 ftco-animate">
 				<div class="project">
 					<div class="img">
-						<img src="images/hotel-resto-1.jpg" class="img-fluid" alt="Colorlib Template">
+						<img src="{{ hotel.image.url }}" class="img-fluid" alt="Colorlib Template">
 					</div>
 					<div class="text">
-						<h4 class="price">$600</h4>
+						<h4 class="price">${{ hotel.price }}</h4>
 						<span>300 per person</span>
-						<h3><a href="project.html">New Orleans Hotel</a></h3>
+						<h3><a href="project.html">{{ hotel.title }}</a></h3>
 						<div class="star d-flex clearfix">
 							<div class="mr-auto float-left">
 								<span class="ion-ios-star"></span>
@@ -341,65 +263,12 @@
 							</div>
 						</div>
 					</div>
-					<a href="images/hotel-resto-1.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
+					<a href="{{ hotel.image.url }}" class="icon image-popup d-flex justify-content-center align-items-center">
 						<span class="icon-expand"></span>
 					</a>
 				</div>
 			</div>
-			<div class="col-md-6 col-lg-4 ftco-animate">
-				<div class="project">
-					<div class="img">
-						<img src="images/hotel-resto-2.jpg" class="img-fluid" alt="Colorlib Template">
-					</div>
-					<div class="text">
-						<h4 class="price">$600</h4>
-						<span>300 per person</span>
-						<h3><a href="project.html">New Orleans Hotel</a></h3>
-						<div class="star d-flex clearfix">
-							<div class="mr-auto float-left">
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-							</div>
-							<div class="float-right">
-								<span class="rate"><a href="#">(120)</a></span>
-							</div>
-						</div>
-					</div>
-					<a href="images/hotel-resto-2.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-						<span class="icon-expand"></span>
-					</a>
-				</div>
-			</div>
-			<div class="col-md-6 col-lg-4 ftco-animate">
-				<div class="project">
-					<div class="img">
-						<img src="images/hotel-resto-3.jpg" class="img-fluid" alt="Colorlib Template">
-					</div>
-					<div class="text">
-						<h4 class="price">$600</h4>
-						<span>300 per person</span>
-						<h3><a href="project.html">New Orleans Restaurant</a></h3>
-						<div class="star d-flex clearfix">
-							<div class="mr-auto float-left">
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-								<span class="ion-ios-star"></span>
-							</div>
-							<div class="float-right">
-								<span class="rate"><a href="#">(120)</a></span>
-							</div>
-						</div>
-					</div>
-					<a href="images/hotel-resto-3.jpg" class="icon image-popup d-flex justify-content-center align-items-center">
-						<span class="icon-expand"></span>
-					</a>
-				</div>
-			</div>
+			{% endfor %}
 		</div>
 	</div>
 </section>
@@ -447,7 +316,7 @@
 			<div class="col-md-12 testimonial">
 				<div class="carousel-testimony owl-carousel ftco-owl">
 					<div class="item">
-						<div class="testimony-wrap img" style="background-image: url(images/traveler-1.jpg);">
+						<div class="testimony-wrap img" style="background-image: url({% static './images/traveler-1.jpg' %});">
 							<div class="overlay"></div>
 							<div class="text">
 								<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -458,7 +327,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="testimony-wrap" style="background-image: url(images/traveler-2.jpg);">
+						<div class="testimony-wrap" style="background-image: url({% static './images/traveler-2.jpg' %});">
 							<div class="overlay"></div>
 							<div class="text">
 								<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -469,7 +338,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="testimony-wrap" style="background-image: url(images/traveler-3.jpg);">
+						<div class="testimony-wrap" style="background-image: url({% static './images/traveler-3.jpg' %});">
 							<div class="overlay"></div>
 							<div class="text">
 								<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -480,7 +349,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="testimony-wrap" style="background-image: url(images/traveler-4.jpg);">
+						<div class="testimony-wrap" style="background-image: url({% static './images/traveler-4.jpg' %});">
 							<div class="overlay"></div>
 							<div class="text">
 								<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
@@ -491,7 +360,7 @@
 						</div>
 					</div>
 					<div class="item">
-						<div class="testimony-wrap" style="background-image: url(images/traveler-5.jpg);">
+						<div class="testimony-wrap" style="background-image: url({% static './images/traveler-5.jpg' %});">
 							<div class="overlay"></div>
 							<div class="text">
 								<p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
