@@ -35,8 +35,8 @@
                 <span class="yr">{{ blog.get_year }}</span>
               </div>
             </div>
-            <h3 class="heading"><a href="{{ blog.get_absolute_url }}">{{ blog.title }}</a></h3>
-            <p>{{ blog.text|slice:'50' }}...</p>
+            <h3 class="heading"><a href="{{ category.get_absolute_url }}">{{ category.name }}</a></h3>
+            <p>{{ category.description|slice:'50' }}...</p>
           </div>
         </div>
       </div>

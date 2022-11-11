@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Tag, Destination, Hotel, Blog, Comment, Category
 from .forms import CommentForm
+from django.db.models import Count
 # Create your views here.
 
 
@@ -76,6 +77,8 @@ def blog_detail(request, slug):
 
 def category(request):
     categories = Category.objects.all().order_by('-id')
+    categories_list = Category.objects.annotate(posts_count=Count('blog'))
+    print(categories_list.values())
     context = {
         'categories': categories
     }
