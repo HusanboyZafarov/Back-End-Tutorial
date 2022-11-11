@@ -51,7 +51,13 @@ Blog | {{ blog.title }}
           </div>
         </div>
         <div class="pt-5 mt-5">
-          <h3 class="mb-5">{{ comments|length }} Comments</h3>
+          <h3 class="mb-5">
+            {% if comments|length == 0 %}
+            Become a first comment writer:)
+            {% else %}
+            {{ comments|length }} Comments
+            {% endif %}
+          </h3>
           <ul class="comment-list">
             {% for comment in comments %}
             <li class="comment">
@@ -101,7 +107,7 @@ Blog | {{ blog.title }}
           <div class="categories">
             <h3>Categories</h3>
             {% for category in categories %}
-            <li><a href="#">{{category}}</a></li>
+            <li><a href="#">{{category}} <span>()</span></a></li>
             {% endfor %}
           </div>
         </div>
