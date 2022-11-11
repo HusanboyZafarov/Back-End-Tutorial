@@ -7,9 +7,11 @@ from .forms import CommentForm
 def home(request):
     destinations = Destination.objects.all().order_by('-id')[:4]
     hotels = Hotel.objects.all().order_by('-id')[:3]
+    blogs = Blog.objects.all().order_by('-id')[:3]
     context = {
         'destinations': destinations,
         'hotels': hotels,
+        'blogs': blogs
     }
     return render(request, 'index.html', context)
 
@@ -57,7 +59,7 @@ def blog_detail(request, slug):
         if form.is_valid():
             instance = form.save(commit=False)
             instance.blog = blog
-            instance.save() 
+            instance.save()
             return redirect(f'/blog_detail/{slug}')
     else:
         form = CommentForm()
