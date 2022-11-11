@@ -15,12 +15,14 @@ class Tag(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True, max_length=150)
+    image = models.ImageField(upload_to='Category_Images/%Y-Year/%m-Month')
+    description = models.TextField()
 
     def __str__(self):
         return str(self.name)
 
     def get_absolute_url(self):
-        return reverse("category_detail", kwargs={"slug": self.slug})
+        return reverse("blog:category_detail", kwargs={"slug": self.slug})
 
 
 class Destination(models.Model):

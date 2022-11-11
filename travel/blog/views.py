@@ -74,6 +74,24 @@ def blog_detail(request, slug):
     return render(request, 'blog-single.html', context)
 
 
+def category(request):
+    categories = Category.objects.all().order_by('-id')
+    context = {
+        'categories': categories
+    }
+    return render(request, 'category.html', context)
+
+
+def category_detail(request, slug):
+    category = Category.objects.get(slug=slug)
+    blogs = Blog.objects.filter(category=category)
+    context = {
+        'blogs': blogs,
+        'object': category,
+    }
+    return render(request, 'category_detail.html', context)
+
+
 def contact(request):
     context = {
 
