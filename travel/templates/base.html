@@ -41,6 +41,16 @@
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active"><a href="{% url 'blog:home' %}" class="nav-link">Home</a></li>
+          <li class="nav-item dropdown">
+          <li class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categories
+          </li>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            {% for category in categories %}
+            <li><a class="dropdown-item" href="{{ category.get_absolute_url }}">{{ category.name }}</a></li>
+            {% endfor %}
+          </ul>
+          </li>
           <li class="nav-item"><a href="{% url 'blog:about' %}" class="nav-link">About</a></li>
           <li class="nav-item"><a href="{% url 'blog:destination' %}" class="nav-link">Destination</a></li>
           <li class="nav-item"><a href="{% url 'blog:hotels' %}" class="nav-link">Hotels &amp; Restaurant</a></li>
