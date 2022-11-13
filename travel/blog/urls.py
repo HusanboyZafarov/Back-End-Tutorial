@@ -14,4 +14,5 @@ urlpatterns = [
          views.category_detail, name='category_detail'),
     path('category/', views.category, name='category'),
     path('contact/', views.contact, name='contact'),
+    path('result_page/', views.result, name='result'),
 ]

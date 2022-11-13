@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Tag, Destination, Hotel, Blog, Comment, Category
 from .forms import CommentForm
 from django.db.models import Count
+from django.db.models import Q
 # Create your views here.
 
 
@@ -89,7 +90,6 @@ def blog_detail(request, slug):
 def category(request):
     categories = Category.objects.all().order_by('-id')
     categories_list = Category.objects.annotate(posts_count=Count('blog'))
-    print(categories_list.values())
     context = {
         'categories': categories
     }
@@ -114,3 +114,17 @@ def contact(request):
         'categories': categories,
     }
     return render(request, 'contact.html', context)
+
+
+def result(request):
+    q = request.GET.get("query")
+    if len(q) >= 3:
+        # query = Player.objects.filter(name__icontains=q)
+        query = Blog.objects.filter(
+            Q(title__icontains=q)
+        )
+        context = {
+            'blogs': query,
+            'query': q,
+        }
+        return render(request, 'result.html', context)

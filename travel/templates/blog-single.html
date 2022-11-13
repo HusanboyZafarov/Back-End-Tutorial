@@ -96,10 +96,10 @@ Blog | {{ blog.title }}
       </div> <!-- .col-md-8 -->
       <div class="col-lg-4 sidebar ftco-animate">
         <div class="sidebar-box">
-          <form action="#" class="search-form">
+          <form action="{% url 'blog:result' %}" class="search-form">
             <div class="form-group">
               <span class="icon icon-search"></span>
-              <input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+              <input type="text" name="query" class="form-control" placeholder="Type a keyword and hit enter">
             </div>
           </form>
         </div>
@@ -107,7 +107,7 @@ Blog | {{ blog.title }}
           <div class="categories">
             <h3>Categories</h3>
             {% for category in categories %}
-            <li><a href="{{ category.get_absolute_url }}">{{category}} <span>()</span></a></li>
+            <li><a href="{{ category.get_absolute_url }}">{{category}} <span>({{category.category.all|length}})</span></a></li>
             {% endfor %}
           </div>
         </div>

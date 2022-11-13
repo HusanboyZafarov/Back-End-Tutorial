@@ -36,6 +36,8 @@ class AdminBlog(admin.ModelAdmin):
     list_display = ['title', 'category', 'data_time', 'id']
     list_display_links = ['title', 'category', 'data_time', 'id']
     prepopulated_fields = {'slug': ('title', )}
+    search_fields = ['title__name']
+    
 
 
 admin.site.register(Comment)
