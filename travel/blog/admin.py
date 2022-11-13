@@ -33,11 +33,11 @@ class AdminHotel(admin.ModelAdmin):
 
 @admin.register(Blog)
 class AdminBlog(admin.ModelAdmin):
-    list_display = ['title', 'category', 'data_time', 'id']
-    list_display_links = ['title', 'category', 'data_time', 'id']
+    list_display = ['title', 'category', 'data_time', 'author_name', 'id']
+    list_display_links = ['title', 'category',
+                          'data_time', 'author_name', 'id']
     prepopulated_fields = {'slug': ('title', )}
     search_fields = ['title__name']
-    
 
 
 admin.site.register(Comment)

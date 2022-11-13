@@ -1,6 +1,8 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-{% block title %}Category | {{ object.name }}{% endblock title %}
+{% block title %}
+Blog
+{% endblock title %}
 {% block content %}
 <section class="hero-wrap hero-wrap-2 js-fullheight" style="background-image: url({% static './images/bg_2.jpg' %});"
   data-stellar-background-ratio="0.5">
@@ -8,13 +10,16 @@
   <div class="container">
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 text-center">
-        <h1 class="mb-3 bread">Category {{ object.name }}</h1>
-        <p class="breadcrumbs">
-          <span class="mr-2"><a href="{% url 'blog:home' %}">Home <i class="ion-ios-arrow-forward"></i></a></span>
-          <span class='mr-2'><a href="{% url 'blog:category' %}">Category <i
-                class="ion-ios-arrow-forward"></i></a></span>
-          {{ object.name }}<i class="ion-ios-arrow-forward"></i></span>
+        <h1 class="mb-3 bread">Search</h1>
+        <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'blog:home' %}">Home <i
+                class="ion-ios-arrow-forward"></i></a></span> <span>Search <i class="ion-ios-arrow-forward"></i></span>
         </p>
+        <form action="{% url 'blog:result' %}" class="search-form bg-transparent">
+          <div class="form-group" >
+            <span class="icon icon-search"></span>
+            <input type="text" name="query" style='outline:none;' class="form-control" placeholder="Type a keyword and hit enter">
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -22,8 +27,8 @@
 
 <section class="ftco-section bg-light">
   <div class="container">
+    <h1>Recent Blog</h1>
     <div class="row d-flex">
-      {% if blogs %}
       {% for blog in blogs %}
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry justify-content-end">
@@ -58,10 +63,7 @@
         </div>
       </div>
       {% endfor %}
-      {% else %}
-      <h4>Ooops! There is no posts for "{{ object.name }}" category. <small><a href="{% url 'blog:home' %}">Let's move
-            to home page</a></small></h4>
-      {% endif %}
+
     </div>
   </div>
 </section>

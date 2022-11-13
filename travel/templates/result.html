@@ -10,10 +10,10 @@ Search | {{query}}
   <div class="container"> 
     <div class="row no-gutters slider-text js-fullheight align-items-end justify-content-center">
       <div class="col-md-9 ftco-animate pb-5 text-center">
-        <h1 class="mb-3 bread">Searching for {{query}}</h1>
+        <h1 class="mb-3 bread">Searching for "{{query}}"</h1>
         <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'blog:home' %}">Home <i
                 class="ion-ios-arrow-forward"></i></a></span>
-                <span class="mr-2"><a href="{% url 'blog:home' %}">Search <i
+                <span class="mr-2"><a href="{% url 'blog:search' %}">Search <i
                   class="ion-ios-arrow-forward"></i></a></span>
                  <span>{{query}} <i class="ion-ios-arrow-forward"></i></span>
         </p>
@@ -25,6 +25,7 @@ Search | {{query}}
 <section class="ftco-section bg-light">
   <div class="container">
     <div class="row d-flex">
+      {% if blogs %}
       {% for blog in blogs %}
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry justify-content-end">
@@ -59,7 +60,9 @@ Search | {{query}}
         </div>
       </div>
       {% endfor %}
-
+      {% else %}
+      <h1>No results for "{{query}}"</h1>
+      {% endif %}
     </div>
   </div>
 </section>

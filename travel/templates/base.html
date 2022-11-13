@@ -74,14 +74,14 @@
         </div>
         <div class="col-md">
           <div class="ftco-footer-widget mb-4 ml-md-5">
-            <h2 class="ftco-heading-2">Infromation</h2>
+            <h2 class="ftco-heading-2">Location</h2>
             <ul class="list-unstyled">
-              <li><a href="#" class="py-2 d-block">Online Enquiry</a></li>
-              <li><a href="#" class="py-2 d-block">General Enquiries</a></li>
-              <li><a href="#" class="py-2 d-block">Booking Conditions</a></li>
-              <li><a href="#" class="py-2 d-block">Privacy and Policy</a></li>
-              <li><a href="#" class="py-2 d-block">Refund Policy</a></li>
-              <li><a href="#" class="py-2 d-block">Call Us</a></li>
+              <li><a href="{% url 'blog:home' %}" class="py-2 d-block">Home</a></li>
+              <li><a href="{% url 'blog:about' %}" class="py-2 d-block">About</a></li>
+              <li><a href="{% url 'blog:destination' %}" class="py-2 d-block">Destination</a></li>
+              <li><a href="{% url 'blog:hotels' %}" class="py-2 d-block">Hotels &amp; Restaurant</a></li>
+              <li><a href="{% url 'blog:blog' %}" class="py-2 d-block">Blog</a></li>
+              <li><a href="{% url 'blog:contact' %}" class="py-2 d-block">Contact Us</a></li>
             </ul>
           </div>
         </div>
@@ -120,8 +120,9 @@
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
             Copyright &copy;
             {% now "Y" %} All rights reserved | This template is made with
-            <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com"
-              target="_blank">Colorlib</a>
+            <i class="icon-heart color-danger" style="color:red;" aria-hidden="true"></i> by <a
+              href="https://t.me/Sam0se">Husanboy
+              Zafarov</a>
             <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
           </p>
         </div>

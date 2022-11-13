@@ -41,13 +41,11 @@ Blog | {{ blog.title }}
 
         <div class="about-author d-flex p-4 bg-light">
           <div class="bio mr-5">
-            <img src="{% static './images/person_1.jpg' %}" alt="Image placeholder" class="img-fluid mb-4">
+            <img src="{{ blog.author_image.url }}" alt="Image placeholder" class="img-fluid mb-4">
           </div>
           <div class="desc">
-            <h3>George Washington</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus
-              voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique,
-              inventore eos fugit cupiditate numquam!</p>
+            <h3>{{ blog.author_name }}</h3>
+            <p>{{ blog.author_text }}</p>
           </div>
         </div>
         <div class="pt-5 mt-5">
@@ -121,7 +119,7 @@ Blog | {{ blog.title }}
               <h3 class="heading"><a href="{{ b.get_absolute_url }}">{{ b.title }}</a>
               </h3>
               <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span>
+                <div><a href="{{ b.get_absolute_url }}"><span class="icon-calendar"></span>
                     {% if b.get_month == 1 %}January
                     {% elif b.get_month == 2 %}February
                     {% elif b.get_month == 3 %}March
@@ -135,7 +133,8 @@ Blog | {{ blog.title }}
                     {% elif b.get_month == 11 %}November
                     {% elif b.get_month == 12 %}December{% endif %}
                     {{blog.get_day}}, {{b.get_year}}</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                <div><a href="#"><span class="icon-person"></span> {{ b.author_name }}</a></div>
+                <div><a href="{{ b.get_absolute_url }}"><span class="icon-chat"></span> {{b.comment.all|length}}</a></div>
               </div>
             </div>
           </div>

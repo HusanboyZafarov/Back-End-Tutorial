@@ -89,7 +89,6 @@ def blog_detail(request, slug):
 
 def category(request):
     categories = Category.objects.all().order_by('-id')
-    categories_list = Category.objects.annotate(posts_count=Count('blog'))
     context = {
         'categories': categories
     }
@@ -99,7 +98,7 @@ def category(request):
 def category_detail(request, slug):
     categories = Category.objects.all().order_by('-id')
     category = Category.objects.get(slug=slug)
-    blogs = Blog.objects.filter(category=category)
+    blogs = Blog.objects.filter(category=category).order_by('-id')
     context = {
         'blogs': blogs,
         'object': category,
@@ -128,3 +127,15 @@ def result(request):
             'query': q,
         }
         return render(request, 'result.html', context)
+
+
+def search(request):
+    blogs = Blog.objects.all().order_by('-id')[:3]
+    context = {
+        'blogs': blogs
+    }
+    return render(request, 'search.html', context)
+
+
+def error_404(request, exception):
+    return render(request, '404.html')
