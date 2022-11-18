@@ -30,23 +30,12 @@ Blog
           <div class="text mt-3 float-right d-block">
             <div class="d-flex align-items-center pt-2 mb-4 topp">
               <div class="one">
-                <span class="day">{{ blog.get_day }}</span>
+                <span class="day">{{blog.data_time|date:'d'}}</span>
               </div>
               <div class="two">
-                <span class="yr">{{ blog.get_year }}</span>
+                <span class="yr">{{blog.data_time|date:'Y'}}</span>
                 <span class="mos">
-                  {% if blog.get_month == 1 %}January
-                  {% elif blog.get_month == 2 %}February
-                  {% elif blog.get_month == 3 %}March
-                  {% elif blog.get_month == 4 %}April
-                  {% elif blog.get_month == 5 %}May
-                  {% elif blog.get_month == 6 %}June
-                  {% elif blog.get_month == 7 %}July
-                  {% elif blog.get_month == 8 %}August
-                  {% elif blog.get_month == 9 %}September
-                  {% elif blog.get_month == 10 %}October
-                  {% elif blog.get_month == 11 %}November
-                  {% elif blog.get_month == 12 %}December{% endif %}
+                  {{blog.data_time|date:'M'}}
                 </span>
               </div>
             </div>
@@ -57,6 +46,21 @@ Blog
       </div>
       {% endfor %}
 
+    </div>
+    <div class="row mt-5">
+      <div class="col text-center">
+        <div class="block-27">
+          <ul>
+            <li><a href="#">&lt;</a></li>
+            <li class="active"><span>1</span></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li><a href="#">&gt;</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>

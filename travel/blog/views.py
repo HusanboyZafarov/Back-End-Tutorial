@@ -118,7 +118,6 @@ def contact(request):
 def result(request):
     q = request.GET.get("query")
     if len(q) >= 3:
-        # query = Player.objects.filter(name__icontains=q)
         query = Blog.objects.filter(
             Q(title__icontains=q)
         )

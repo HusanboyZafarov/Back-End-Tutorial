@@ -120,19 +120,8 @@ Blog | {{ blog.title }}
               </h3>
               <div class="meta">
                 <div><a href="{{ b.get_absolute_url }}"><span class="icon-calendar"></span>
-                    {% if b.get_month == 1 %}January
-                    {% elif b.get_month == 2 %}February
-                    {% elif b.get_month == 3 %}March
-                    {% elif b.get_month == 4 %}April
-                    {% elif b.get_month == 5 %}May
-                    {% elif b.get_month == 6 %}June
-                    {% elif b.get_month == 7 %}July
-                    {% elif b.get_month == 8 %}August
-                    {% elif b.get_month == 9 %}September
-                    {% elif b.get_month == 10 %}October
-                    {% elif b.get_month == 11 %}November
-                    {% elif b.get_month == 12 %}December{% endif %}
-                    {{blog.get_day}}, {{b.get_year}}</a></div>
+                    {{b.data_time|date:'M'}}
+                    {{b.data_time|date:'d'}}, {{b.data_time|date:'Y'}}</a></div>
                 <div><a href="#"><span class="icon-person"></span> {{ b.author_name }}</a></div>
                 <div><a href="{{ b.get_absolute_url }}"><span class="icon-chat"></span> {{b.comment.all|length}}</a></div>
               </div>
