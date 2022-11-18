@@ -22,7 +22,7 @@ Blog
 <section class="ftco-section bg-light">
   <div class="container">
     <div class="row d-flex">
-      {% for blog in blogs %}
+      {% for blog in page.object_list %}
       <div class="col-md-4 d-flex ftco-animate">
         <div class="blog-entry justify-content-end">
           <a href="{{ blog.get_absolute_url }}" class="block-20" style="background-image: url('{{ blog.image.url }}');">
@@ -56,7 +56,27 @@ Blog
         </div>
       </div>
       {% endfor %}
-
+    </div>
+    <div class="row mt-5">
+      <div class="col text-center">
+        <div class="block-27">
+          <ul>
+            {% if page.has_previous %}
+            <li><a href="{% url 'blog:blog' %}?page={{ page.previous_page_num }}">&lt;</a></li>
+            {% endif %}
+            {% for num_page in page.paginator.page_range %}
+            {% if page.number == num_page %}
+            <li class="active"><a href="{% url 'blog:blog' %}?page={{ num_page }}"><span>{{ num_page }}</span></a></li>
+            {% else %}
+            <li><a href="{% url 'blog:blog' %}?page={{ num_page }}">{{ num_page }}</a></li>
+            {% endif %}
+            {% endfor %}
+            {% if page.has_next %}
+            <li><a href="{% url 'blog:blog' %}?page={{ page.next_page_number }}">&gt;</a></li>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>

@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Tag, Destination, Hotel, Blog, Comment, Category
 from .forms import CommentForm
-from django.db.models import Count
 from django.db.models import Q
+from django.core.paginator import Paginator
 # Create your views here.
 
 
@@ -51,9 +51,12 @@ def hotels(request):
 def blog(request):
     categories = Category.objects.all().order_by('-id')
     blogs = Blog.objects.all().order_by('-id')
+    page = Paginator(blogs, 6)
+    page_list = request.GET.get('page')
+    page = page.get_page(page_list)
     context = {
         'categories': categories,
-        'blogs': blogs
+        'page': page
     }
     return render(request, 'blog.html', context)
 
