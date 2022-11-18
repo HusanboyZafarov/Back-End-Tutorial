@@ -31,9 +31,14 @@ def about(request):
 def destination(request):
     categories = Category.objects.all().order_by('-id')
     destinations = Destination.objects.all().order_by('-id')
+    page = Paginator(destinations, 6)
+    page_number = page.num_pages
+    page_list = request.GET.get('page')
+    page = page.get_page(page_list)
     context = {
         'categories': categories,
-        'destinations': destinations
+        'page': page,
+        'page_number': page_number
     }
     return render(request, 'destination.html', context)
 
@@ -41,9 +46,14 @@ def destination(request):
 def hotels(request):
     categories = Category.objects.all().order_by('-id')
     hotels = Hotel.objects.all().order_by('-id')
+    page = Paginator(hotels, 6)
+    page_number = page.num_pages
+    page_list = request.GET.get('page')
+    page = page.get_page(page_list)
     context = {
         'categories': categories,
-        'hotels': hotels
+        'page': page,
+        'page_number': page_number
     }
     return render(request, 'hotels.html', context)
 
@@ -52,11 +62,13 @@ def blog(request):
     categories = Category.objects.all().order_by('-id')
     blogs = Blog.objects.all().order_by('-id')
     page = Paginator(blogs, 6)
+    page_number = page.num_pages
     page_list = request.GET.get('page')
     page = page.get_page(page_list)
     context = {
         'categories': categories,
-        'page': page
+        'page': page,
+        'page_number': page_number
     }
     return render(request, 'blog.html', context)
 
