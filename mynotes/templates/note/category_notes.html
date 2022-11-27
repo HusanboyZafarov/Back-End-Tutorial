@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All notes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-md mx-10 my-10">
+    <div class="flex flex-wrap flex-row gap-3">
+      {% for note in notes %}
+      <div class="card w-96 p-4 bg-[#3482F6] hover:bg-[#1D4ED8]">
+        <div class="flex justify-between">
+          <div class="title text-lg text-white font-bold">{{note.title}}</div>
+          <div>
+            <a href="{{ note.status.get_absolute_url }}">
+              <div class="status bg-{{note.status|lower}}-500" style="width: 25px; height:25px; border-radius:50%;">
+              </div>
+            </a>
+          </div>
+        </div>
+        <p class="text-white my-4">{{note.body}}</p>
+        <a href="{{ note.category.get_absolute_url }}" class="text-white font-bold ">{{note.category}}</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% if page_obj.paginator.page_range <= 1 %} <div class="flex my-10 justify-center">
+      <nav aria-label="Page navigation example">
+        <ul class="flex list-style-none">
+          {% if page_obj.has_previous %}
+          <li class="page-item disabled"><a
+              class="page-link relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded-full text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+              href="?page={{ page_obj.previous_page_num }}" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          {% endif %}
+          {% for num_page in page_obj.paginator.page_range %}
+          {% if page_obj.number == num_page %}
+          <li class="page-item active"><a
+              class="page-link relative block py-1.5 px-3 border-0 bg-blue-600 outline-none transition-all duration-300 rounded-full text-white hover:text-white hover:bg-blue-600 shadow-md focus:shadow-md"
+              href="?page={{ num_page }}">{{num_page}}</a></li>
+          </li>
+          {% else %}
+          <li class="page-item"><a
+              class="page-link relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded-full text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+              href="?page={{ num_page }}">{{num_page}}</a></li>
+          {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+          <li class="page-item"><a
+              class="page-link relative block py-1.5 px-3 border-0 bg-transparent outline-none transition-all duration-300 rounded-full text-gray-800 hover:text-gray-800 hover:bg-gray-200 focus:shadow-none"
+              href="?page={{ page_obj.next_page_number }}">Next</a></li>
+          {% endif %}
+        </ul>
+
+      </nav>
+  </div>
+  {% endif %}
+  </div>
+
+
+</body>
+
+</html>
