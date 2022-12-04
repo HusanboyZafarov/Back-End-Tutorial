@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="Husanboy Zafarov" content="AUTHOR">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="{% static './css/home.css' %}">
+  <link rel="stylesheet" href="{% static './css/home_responsive.css' %}">
+  <link rel="stylesheet" href="{% static './css/swiper.css' %}">
+  <title>Nikason | {% block title %}{% endblock title %}</title>
+</head>
+
+<body>
+
+  <!-- Header Starts -->
+  <header>
+    <div class="container">
+      <div class="section-wrapp">
+        <nav>
+          <ul class="header_list">
+            <li class="header_item"><a href="{% url 'main:master_class' %}">Мастер-классы</a></li>
+            <li class="header_item"><a href="{% url 'main:furniture' %}">Мебель на заказ</a></li>
+            <li class="header_item image_item"><a href="{% url 'main:home' %}"><img src="{% static './images/logo.svg' %}" alt=""></a></li>
+            <li class="header_item"><a href="#">Контакты</a></li>
+            <li class="header_item"><a href="{% url 'main:about' %}">О нас</a></li>
+          </ul>
+        </nav>
+        <div class="burger_wrapper">
+          <div class="header_burger">
+            <div class="line line_one"></div>
+            <div class="line line_two"></div>
+            <div class="line line_three"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header Ends -->
+
+  {% block content %}
+  {% endblock content %}
+
+  <!-- Footer Starts -->
+  <footer>
+    <div class="section-wrapp">
+      <div class="container">
+        <ul class="footer_list">
+          <li class="footer_item">
+            <p>ИП Колодезников-Матчитов Н.И. <br>
+              ИНН 143515646663</p>
+          </li>
+          <li class="footer_item">
+            <p><a href="{% url 'main:master_class' %}">Мастер-классы</a></p>
+            <p><a href="{% url 'main:furniture' %}">Мебель на заказ</a></p>
+          </li>
+          <li class="footer_item">
+            <p><a href="#">Контакты</a></p>
+            <p><a href="{% url 'main:about' %}">О нас</a></p>
+          </li>
+          <li class="footer_item">
+            <p><a href="#">Политика кофиденциальности</a></p>
+            <p><a href="#">Договор оферты</a></p>
+          </li>
+          <li class="footer_item">
+            <ul class="footer_socials">
+              <li class="footer_socails_item">
+                <a href="#">
+                  <img src="{% static './images/footer_tg_icon.svg' %}" alt="">
+                </a>
+              </li>
+              <li class="footer_socails_item">
+                <a href="#">
+                  <img src="{% static './images/footer_inst_icon.svg' %}" alt="">
+                </a>
+              </li>
+              <li class="footer_socails_item">
+                <a href="#">
+                  <img src="{% static './images/footer_whatsup_icon.svg' %}" alt="">
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer Ends -->
+  <script src="{% static './js/main.js' %}"></script>
+  <script src="{% static './js/swiper.min.js' %}"></script>
+  <script src="{% static './js/swiper_settings.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Requests{% endblock title %}
+{% block content %}
+<main>
+  <!-- Section Requests Starts -->
+  <div class="section_requests">
+    <div class="section-wrapp">
+      <div class="container">
+        <div class="cards_wrapper">
+          {% for message in messages %}
+          <div class="card">
+            <p>{{ message.name }}</p>
+            <p>{{ message.number }}</p>
+            <img src="{{ message.image.url }}" alt="">
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Section Requests Ends -->
+</main>
+{% endblock content %}

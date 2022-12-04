@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}About Us{% endblock title %}
+{% block content %}
+  <main>
+    <!-- Section Hero Starts -->
+    <div class="section_hero_about">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1 class="section_hero_heading">История создания мастерской</h1>
+          <h1 class="section_hero_heading" translate="no">NIKASON BRAND</h1>
+        </div>
+        <div class="container_for_about_img">
+          <div class="img_wrapper">
+            <img src="{% static './images/section_hero_about.png' %}" alt="">
+          </div>
+        </div>
+        <div class="container">
+          <ul class="section_hero_about_list">
+            <li class="section_hero_about_item">
+              <h1>+10 лет</h1>
+              <p>На рынке по производству мебели</p>
+            </li>
+            <li class="section_hero_about_item">
+              <h1>+1500</h1>
+              <p>Изготовлено мебели</p>
+            </li>
+            <li class="section_hero_about_item">
+              <h1>120 лет</h1>
+              <p>Самой старинной мебели для реставрации </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section Hero Ends -->
+
+    <!-- Section Workshop Starts -->
+    <div class="section_workshop">
+      <div class="section-wrapp">
+        <div class="container">
+          <ul class="section_workshop_upper_list">
+            <li class="section_workshop_upper_item">
+              <img src="{% static './images/section_workshop_img.png' %}" alt="">
+            </li>
+            <li class="section_workshop_upper_item">
+              <ul class="section_workshop_list">
+                <li class="section_workshop_item">Никита Колодезников-Матчитов</li>
+                <li class="section_workshop_item">Основатель мастерской</li>
+                <li class="section_workshop_item">
+                  С детства я был окружен творческими людьми, мой дедушка был строителем и мастером по дереву. Спустя
+                  много лет и мне
+                  передалась его любовь к дереву - в свободное время мастерил для себя небольшие изделия из древесины.
+                </li>
+                <li class="section_workshop_item">Более десяти лет назад построил двухэтажный гараж, на втором этаже
+                  расположилась наша мастерская. Начинал производство
+                  практически “с нуля”, с каждой зарплаты понемногу откладывал на покупку инстурментов и станков.</li>
+                <li class="section_workshop_item">
+                  Постепенно начали появляться первые заказы. Несколько лет назад мы с супругой решили еще заняться
+                  ремонтом и
+                  реставрацией мебели. Эту идею предложили сами клиенты, поскольку периодически приходили с таким
+                  запросом. В основном,
+                  реставрацией занимается супруга Саргылана. Мы с ней одна сплоченная, дружная и отличная команда.
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section Workshop Ends -->
+
+    <!-- Section Philosophy Starts -->
+    <div class="section_philosoply">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>Философия мастерской NIKASON</h1>
+          <p>Создавать что-то по-настоящему ценное и уникальное. <br> Дарить радость и уют в каждый дом</p>
+        </div>
+      </div>
+    </div>
+    <!-- Section Philosophy Ends -->
+
+    <!-- Section Smi Ends -->
+    <div class="section_smi">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>СМИ о нас</h1>
+          <p>О нашей мастерской пишут многие издания Якутии</p>
+          <ul class="section_smi_list">
+            {% for object in smiaboutus %}
+            <li class="section_smi_item">
+              <img src="{{ object.image.url }}" alt="">
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section Smi Ends -->
+
+    <!-- Section Form Starts -->
+    <div class="section_form">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>Оставьте заявку и мы с вами свяжемся</h1>
+          <div class="form_wrapper">
+            <form class="my_form" enctype="multipart/form-data">
+              <label for="name">Your Name</label>
+              <input type="text" required id="name" name="name">
+              <label for="number">Your Number</label>
+              <input type="number" required id="number" name="number">
+              <label for="input_image">Image</label>
+              <input required type="file" id="input_image" name="image">
+              <button class="form_btn" type="submit">Отправить</button>
+            </form>
+          </div>
+          <div class="message_for_user" style="display:none;">
+            Отправлено
+          </div>
+          <center>
+            <button class="opener_btn">Оставить заявку</button>
+          </center>
+        </div>
+      </div>
+    </div>
+    <!-- Section Form Ends -->
+  </main>
+{% endblock content %}

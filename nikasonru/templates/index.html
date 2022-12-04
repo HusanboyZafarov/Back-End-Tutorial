@@ -1,0 +1,229 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+{% load static %}
+  {% block content %}
+  <main>
+    <!-- Section Hero Starts -->
+    <div class="section_hero">
+      <ul class="section_hero_list">
+        <li class="section_hero_items"><img src="{% static './images/section_hero_img.png' %}" alt=""></li>
+        <li class="section_hero_items">
+          <div class="section-wrapp">
+            <div class="container_for_hero">
+              <ul class="section_hero_inner_list">
+                <li class="section_hero_inner_item">Столярная мастерская NIKASON BRAND</li>
+                <li class="section_hero_inner_item">Изготовление и <br> реставрация мебели</li>
+                <li class="section_hero_inner_item">Авторская мебель ручной работы, сделанная с душой и трепетом.</li>
+                <li class="section_hero_inner_item">
+                  <a href="#">
+                    <button class="section_hero_btn">Смотреть услуги</button>
+                  </a>
+                </li>
+                <li class="section_hero_inner_item">
+                  <ul class="section_hero_socials">
+                    <li class="section_hero_socials_item"><a href="#"><img src="{% static './images/telegram_icon.svg' %}" alt=""></a>
+                    </li>
+                    <li class="section_hero_socials_item"><a href="#"><img src="{% static './images/instagram_icon.svg' %}" alt=""></a>
+                    </li>
+                    <li class="section_hero_socials_item"><a href="#"><img src="{% static './images/whatsup_icon.svg' %}" alt=""></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Section Hero Ends -->
+
+    <!-- Section This Starts -->
+    <div class="section_this">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>NIKASON BRAND это</h1>
+          <ul class="section_this_list">
+            <li class="section_this_item">Производство авторской мебели из массива</li>
+            <li class="section_this_item">Реставрация, редизайн, ремонт деревянной мебели</li>
+            <li class="section_this_item">Производство мебели по индивидуальным размерам</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section This Ends -->
+
+    <!-- Section Product Starts -->
+    <div class="section_product">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>Более 10 лет мы производим</h1>
+          <ul class="section_product_list">
+            <li class="section_product_item">
+              <img src="{% static './images/section_product_img_one.png' %}" alt="">
+              <p>Двери</p>
+            </li>
+            <li class="section_product_item">
+              <img src="{% static './images/section_product_img_two.png' %}" alt="">
+              <p>Шкафы</p>
+            </li>
+            <li class="section_product_item">
+              <img src="{% static './images/section_product_img_three.png' %}" alt="">
+              <p>Столы и стулья</p>
+            </li>
+            <li class="section_product_item">
+              <img src="{% static './images/section_product_img_four.png' %}" alt="">
+              <p>Комоды</p>
+            </li>
+            <li class="section_product_item">
+              <img src="{% static './images/section_product_img_five.png' %}" alt="">
+              <p>Тумбы</p>
+            </li>
+            <li class="section_product_item">
+              <img src="{% static './images/section_product_img_six.png' %}" alt="">
+              <p>Арки</p>
+            </li>
+            <li class="section_product_item">
+              <img src="{% static './images/section_product_img_seven.png' %}" alt="">
+              <p>Перегородки</p>
+            </li>
+            <li class="section_product_item">
+              <img src="{% static './images/section_product_img_eight.png' %}" alt="">
+              <p>Кровати</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section Product Ends -->
+
+    <!-- Section About Starts -->
+    <div class="section_about">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1 class="section_about_heading">NIKASON BRAND это семейная мастеркая</h1>
+        </div>
+      </div>
+      <ul class="section_about_list">
+        <li class="section_about_items"><img src="{% static './images/section_about_img.png' %}" alt=""></li>
+        <li class="section_about_items">
+          <div class="section-wrapp">
+            <div class="container_for_hero">
+              <ul class="section_about_inner_list">
+                <li class="section_about_inner_item">Саргылана и Никита Колодезниковы-<br>Матчитовы</li>
+                <li class="section_about_inner_item">Саргылана - рестовратор-декоратор, преображает и дарит <br> вторую
+                  жизнь
+                  старой мебели.</li>
+                <li class="section_about_inner_item">
+                  Никита - мастер по дереву, вся мебель делается его <br> умелыми руками.</li>
+                <li class="section_about_inner_item">
+                  <a href="#">
+                    <button class="section_hero_btn">Подробнее о нас</button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Section About Ends -->
+
+    <!-- Section Video Starts -->
+    <div class="section_video">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>Посмотрите видео о нас</h1>
+        </div>
+        <div class="container_for_video">
+          <div class="section_video_source">
+            <div class="section_video_icon">
+              <i class="bi bi-play-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Section Video Ends -->
+
+    <!-- Section Service Starts -->
+    <div class="section_service">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1 class="section_about_heading">Наши услуги</h1>
+        </div>
+      </div>
+      <ul class="section_service_list">
+        <li class="section_service_items"><img src="{% static './images/section_service.png' %}" alt=""></li>
+        <li class="section_service_items">
+          <div class="section-wrapp">
+            <div class="container_for_hero">
+              <ul class="section_service_inner_list">
+                <li class="section_service_inner_item">Мебель на заказ</li>
+                <li class="section_service_inner_item">Мебель под заказ по индивидуальным размерам это гарантия
+                  отличного качества, долговечность, экологичность и
+                  эксклюзивность наших изделий.
+                  Возможность создания своего неповторимого стиля, уникальность и неповторимость каждого изделия.</li>
+                <li class="section_service_inner_item">
+                  <a href="{% url 'main:furniture' %}">
+                    <button class="section_hero_btn">Заказать мебель</button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <ul class="section_service_list">
+        <li class="section_service_items"><img src="{% static './images/section_service_img_two.png' %}" alt=""></li>
+        <li class="section_service_items">
+          <div class="section-wrapp">
+            <div class="container_for_hero">
+              <ul class="section_service_inner_list">
+                <li class="section_service_inner_item">Мастер-классы</li>
+                <li class="section_service_inner_item">Что делать, если память о предках хочется сохранить, но к вашему
+                  интерьеру старая и испорченная мебель не подходит?
+                  Правильно, отреставрировать его и наслаждаться не только обновлённым видом мебели, но и с теплотой
+                  помнить, что эта
+                  мебель была сделана талантливыми предками.</li>
+                <li class="section_service_inner_item">
+                  <a href="{% url 'main:master_class' %}">
+                    <button class="section_hero_btn">Купить мастер-класс</button>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <!-- Section Service Ends -->
+
+    <!-- Section Сertificate Starts -->
+    <div class="section_certificate">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1 class="section_certificate_heading">
+            Гарантия качества мебели от NIKASON BRAND
+          </h1>
+          <div class="certificate_wrapper">
+            <div class="certificate_body">
+              <h1 class="section_certificate_heading_two">
+                Гарантия качества мебели <br> от NIKASON BRAND
+              </h1>
+              <p class="section_certificate_text">На каждое изделие ставим авторский логотип (клеймо) как знак качества
+                и
+                <br>
+                узнаваемости мастера. Таким образом мастер несёт <br>
+                ответственность за каждое изделие помеченное печатью. Есть гарантия на 12 месяцев.
+              </p>
+              <img src="{% static './images/section_certificate_img.svg' %}" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Section Сertificate Ends -->
+  </main>
+  {% endblock content %}

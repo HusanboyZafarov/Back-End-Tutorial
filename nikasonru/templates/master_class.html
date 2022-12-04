@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Master Class{% endblock title %}
+{% block content %}
+  <main>
+    <!-- Section Hero Starts -->
+    <div class="section_hero_master_class" style="background-image: url('{% static './images/master_class_hero_img.png' %}');">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1 class="section_hero_master_class_heading">Нам доверяют мебель с историей в 120 лет</h1>
+          <button class="section_hero_master_class_btn">Смотреть мастер-классы</button>
+        </div>
+      </div>
+    </div>
+    <!-- Section Hero Ends -->
+
+    <!-- Section Our Works Starts -->
+    <div class="section_our_works">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>Наши работы</h1>
+          <ul class="section_our_works_list">
+            {% for object in objects %}
+            <li class="section_our_works_item">
+              <img src="{{ object.image_before.url }}" alt="">
+              <p>До</p>
+            </li>
+            <li class="section_our_works_item">
+              <img src="{{ object.image_after.url }}" alt="">
+              <p>После</p>
+            </li>
+            {% endfor %}
+          </ul>
+          <center>
+            <form action="#">
+              <button type="submit" class="section_our_works_btn">Смотреть больше примеров</button>
+            </form>
+          </center>
+        </div>
+      </div>
+    </div>
+    <!-- Section Our Works Ends -->
+
+    <!-- Section Explore Starts -->
+    <div class="section_explore">
+      <div class="section-wrapper">
+        <div class="container">
+          <h1>Какие техники изучите на МК</h1>
+          <ul class="section_explore_list">
+            <li class="section_explore_item"><span>1</span>
+              <p>Снятие старой краски</p>
+            </li>
+            <li class="section_explore_item"><span>2</span>
+              <p>Устранение царапин и мелких дефектов</p>
+            </li>
+            <li class="section_explore_item"><span>3</span>
+              <p>Ремонт маленьких и больших сколов</p>
+            </li>
+            <li class="section_explore_item"><span>4</span>
+              <p>Ремонт поломанной и расклеившейся мебели</p>
+            </li>
+            <li class="section_explore_item"><span>5</span>
+              <p>Замена старых поврежденных деталей</p>
+            </li>
+            <li class="section_explore_item"><span>6</span>
+              <p>Приемы и идеи декора. Улучшение дизайна старой мебели</p>
+            </li>
+            <li class="section_explore_item"><span>7</span>
+              <p>Покраска изделия</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section Explore Ends -->
+
+    <!-- Section History Starts -->
+    <div class="section_history" style="background-image: url('{% static './images/section_history.png' %}');">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1 class="section_history_heading">Подари вторую жизнь старой мебели и сохрани историю вашей семьи</h1>
+        </div>
+      </div>
+    </div>
+    <!-- Section History Ends -->
+
+    <!-- Section Restoration Starts -->
+    <div class="section_restoration">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>Мастер-классы по реставрации мебели</h1>
+          <ul class="section_restoration_list">
+            <li class="section_restoration_item">
+              <img src="{% static './images/section_restoration_img_one.png' %}" alt="">
+              <p>Буфет</p>
+            </li>
+            <li class="section_restoration_item">
+              <img src="{% static './images/section_restoration_img_two.png' %}" alt="">
+              <p>Сундук</p>
+            </li>
+            <li class="section_restoration_item">
+              <img src="{% static './images/section_restoration_img_three.png' %}" alt="">
+              <p>Комод</p>
+            </li>
+            <li class="section_restoration_item">
+              <img src="{% static './images/section_restoration_img_four.png' %}" alt="">
+              <p>Советское кресло</p>
+            </li>
+            <li class="section_restoration_item">
+              <img src="{% static './images/section_restoration_img_five.png' %}" alt="">
+              <p>Стол</p>
+            </li>
+            <li class="section_restoration_item">
+              <img src="{% static './images/section_restoration_img_six.png' %}" alt="">
+              <p>Стул</p>
+            </li>
+            <li class="section_restoration_item">
+              <img src="{% static './images/section_restoration_img_seven.png' %}" alt="">
+              <p>Обивка стула</p>
+            </li>
+            <li class="section_restoration_item">
+              <img src="{% static './images/section_restoration_img_eigth.png' %}" alt="">
+              <p>Ремонт стула</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section Restoration Starts -->
+
+    <!-- Section Carpentry Starts -->
+    <div class="section_carpentry">
+      <div class="section-wrapp">
+        <div class="container">
+          <h1>Мастер-классы по столярному делу</h1>
+          <ul class="section_carpentry_list">
+            <li class="section_carpentry_item">
+              <img src="{% static './images/section_carpentry_img_one.png' %}" alt="">
+              <p>Консольный столик</p>
+            </li>
+            <li class="section_carpentry_item">
+              <img src="{% static './images/section_carpentry_img_two.png' %}" alt="">
+              <p>Столярное дело для начинающих</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section Carpentry Ends -->
+
+    <!-- Section Redesign Starts -->
+    <div class="section_redesign">
+      <div class="section-wrapp">
+        <div class="container">
+          <ul class="section_redesign_list">
+            <li class="section_redesign_item">
+              <h1>Руководство по редизайну деревянной мебели</h1>
+              <img src="{% static './images/section_redesign_img.png' %}" alt="">
+              <p>Здесь мы собрали всю информацию от подбора инстурментов и материалов до сборки мебели и фурнитуры.
+                Чтобы вы
+                самостоятельно могли разобраться с нюансами работы со старой мебелью из дерева. Наше руководство
+                непременно станет вашей
+                настольной книгой по реставрации мебели.</p>
+              <a href="#">
+                <button class="section_redesign_btn">Подробнее</button>
+              </a>
+            </li>
+            <li class="section_redesign_item">
+              <img src="{% static './images/section_redesign_img.png' %}" alt="">
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Section Redesign Ends -->
+  </main>
+{% endblock content %}
