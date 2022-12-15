@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <p>
+        <a href="{% url 'main:detail' post.id %}">
+            <img src="{{post.image.url}}" width="100" alt="">
+        </a>
+    </p>
+    <h3>
+        <a href="{% url 'main:detail' post.id %}">
+            {{ post.title }}
+        </a>
+    </h3>
+    <h5>Category:<a href="#"> {{ post.category }}</a></h5>
+    <h5>Author:<a href="#">{{ post.author }}</a></h5>
+    <p>{{ post.body|safe }}</p>
+</div>
+{% endblock content %}

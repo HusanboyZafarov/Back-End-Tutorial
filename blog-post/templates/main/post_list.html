@@ -1,0 +1,60 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content %}
+<div class="container my-5">
+  <div class="col-9">
+    <div class="row">
+      <div class="col-12 col-sm-6 col-md-4">
+        {% for post in object_list %}        
+        <div class="card p-3">
+          <div class="card-image-top">
+            <a href="{% url 'main:detail' post.id %}">
+              <img src="{{ post.image.url }}" class="img-fluid" alt="{{ post.image.url }}">
+            </a>
+          </div>
+          <div class="card-body">
+            <div class="card-title">
+              <h4>{{post.title}}</h4>
+              <h5>Category: <a href="#">{{post.category}}</a></h5>
+              <h5>Author: <a href="#">{{post.author}}</a></h5>
+              <p class="text">{{post.body|safe}}</p>
+            </div>
+            <div class="d-flex flex-wrap gap-1">
+
+              <h5>
+                <a href="{% url 'main:update' post.id %}" class="btn btn-outline-primary">
+                  <i class="fas fa-redo-alt"></i>
+                  Update
+                </a>
+              </h5>
+              <h5>
+                <a href="{% url 'main:delete' post.id %}" class="btn btn-outline-danger">
+                  <i class="fas fa-trash"></i>
+                  Delete
+                </a>
+              </h5>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+  {% comment %} <nav aria-label="...">
+    <ul class="pagination my-5 justify-content-center">
+      <li class="page-item disabled">
+        <span class="page-link">Previous</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">1</a></li>
+      <li class="page-item active" aria-current="page">
+        <span class="page-link">2</span>
+      </li>
+      <li class="page-item"><a class="page-link" href="#">3</a></li>
+      <li class="page-item">
+        <a class="page-link" href="#">Next</a>
+      </li>
+    </ul>
+  </nav> {% endcomment %}
+</div>
+{% endblock content %}

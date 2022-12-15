@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}{% if request.path == '/add/' %}Add{% else %}Update{% endif %} Form{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h3>Post {% if request.path == '/add/' %}Add{% else %}Update{% endif %} Form</h3>
+        <br>
+        {% load crispy_forms_tags %}
+        <form action="" method="POST" class="w-50" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.media }}
+            {{form.as_p}}
+            <button class="btn btn-primary my-3" type="submit">
+                {% if request.path == '/add/' %}Add{% else %}Update{% endif %}
+            </button>
+        </form>
+        <br><br>
+    </div>
+{% endblock content %}

@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Deleting {{object.title}} {% endblock title %}
+{% block content %}
+    <div class="container">
+        <h3>Delete Post {{object.title}}</h3>
+        <br>
+        <h2>Book object with title : {{object.title}} will be deleted ! <br>
+            Are you sure ? </h2>
+        {% load crispy_forms_tags %}
+        <form action="" method="POST" class="w-50" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form|crispy}}
+            <button class="btn btn-danger my-3" type="submit">
+                Yes
+            </button>
+        </form>
+        <br><br>
+    </div>
+{% endblock content %}
