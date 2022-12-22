@@ -52,12 +52,14 @@ class Blog(models.Model):
     slug = models.SlugField(max_length=250, unique=True)
     data_time = models.DateTimeField(auto_now_add=True)
     tags = models.ManyToManyField(Tag)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='category')
+    category = models.ForeignKey(
+        Category, on_delete=models.CASCADE, related_name='category')
     image = models.ImageField(upload_to='Blog_Images/%Y-Year/%m-Month')
     text = models.TextField()
     author_name = models.CharField(max_length=255)
     author_text = models.TextField()
-    author_image = models.ImageField(upload_to='Author_Images/%y-Year/%m-Month')
+    author_image = models.ImageField(
+        upload_to='Author_Images/%y-Year/%m-Month')
 
     def __str__(self):
         return str(self.title)
@@ -76,7 +78,8 @@ class Blog(models.Model):
 
 
 class Comment(models.Model):
-    blog = models.ForeignKey(Blog, on_delete=models.CASCADE, related_name='comment')
+    blog = models.ForeignKey(
+        Blog, on_delete=models.CASCADE, related_name='comment')
     name = models.CharField(max_length=150)
     created_at = models.DateTimeField(auto_now_add=True, null=True)
     email = models.EmailField()
